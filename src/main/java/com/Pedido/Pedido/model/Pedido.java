@@ -28,7 +28,7 @@ public class Pedido {
     @Column(nullable = false)
     private Long idUsuarioComprador;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private Long idsuarioVendedor;
 
     /**Onetomany indica que un pedido puede tener muchos detalles de pedido

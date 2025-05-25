@@ -8,7 +8,5 @@ import com.Pedido.Pedido.model.Pedido;
 
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
-    // Custom query methods can be defined here if needed
-    // For example, find by status, date range, etc.
-    
+
 }
