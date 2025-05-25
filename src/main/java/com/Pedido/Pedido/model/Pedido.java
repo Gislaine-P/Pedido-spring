@@ -2,9 +2,13 @@ package com.Pedido.Pedido.model;
 
 import java.util.List;
 
+import com.Pedido.Pedido.enums.PedidoEstado;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -38,6 +42,9 @@ public class Pedido {
     */ 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true) 
     private List<DetallePedido> detalleProducto;
+
+    @Enumerated(EnumType.STRING)
+    private PedidoEstado estadoPedido;
 
     @Column(nullable = false)
     private double total;
