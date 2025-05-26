@@ -12,6 +12,5 @@ import lombok.NoArgsConstructor;
 public class PagoDTO {
     private Long idUsuario; // id del usuario que ha realizado el pago
     private double total; //total del pago
-    private String metodoPago; //metodo de pago (tal vez se elimine)
-
+    
 }
