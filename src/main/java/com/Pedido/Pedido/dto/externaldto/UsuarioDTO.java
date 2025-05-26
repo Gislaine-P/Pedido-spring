@@ -1,4 +1,4 @@
-package com.Pedido.Pedido.recibirDTO;
+package com.Pedido.Pedido.dto.externaldto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.Pedido.Pedido.transferirDTO;
+package com.Pedido.Pedido.dto.shareddto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

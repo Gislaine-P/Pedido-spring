@@ -1,4 +1,4 @@
-package com.Pedido.Pedido.transferirDTO;
+package com.Pedido.Pedido.dto.shareddto;
 
 import java.sql.Date;
 import java.util.List;
