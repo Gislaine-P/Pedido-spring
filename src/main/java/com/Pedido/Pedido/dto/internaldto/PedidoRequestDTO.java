@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PedidoCarritoRequestDTO {
+public class PedidoRequestDTO {
 
     private Long idUsuarioComprador;  // Siempre requerido, el que compra
     private Long idUsuarioVendedor;   // Solo requerido si es pedido presencial (puede ser null si online)
