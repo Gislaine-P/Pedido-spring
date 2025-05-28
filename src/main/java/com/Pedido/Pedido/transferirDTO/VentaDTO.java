@@ -1,6 +1,6 @@
 package com.Pedido.Pedido.transferirDTO;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -14,10 +14,10 @@ import lombok.NoArgsConstructor;
 //Clase de VentaDTO para transferir los datos de la venta al servicio de Venta
 public class VentaDTO {
     private Long idPedido; //Id del pedido que se ha realizado
-    private String usuarioComprador; //Comprador
-    private String usuarioVendedor; //Tal vez, solo si es que puede implementarse
+    private Long idUsuarioComprador; //Comprador
+    private Long idUsuarioVendedor; //Tal vez, solo si es que puede implementarse
     private List<DetallePedidoDTO> detallePedido; //Lista de detalles del pedido
     private double total; //Total de la venta
-    private Date fechaVenta; //Fecha de la venta
+    private LocalDate fechaPedido; //Fecha de la venta
 
 }

@@ -12,6 +12,9 @@ import com.Pedido.Pedido.model.Pedido;
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 
+    //Contar el número de pedidos por estado
+    Long countByEstadoPedido(PedidoEstado estadoPedido);
+
     //Lista de pedido que ha realizado un cliente (tal vez)
     List <Pedido> findByIdUsuarioComprador(Long idUsuarioComprador);
 

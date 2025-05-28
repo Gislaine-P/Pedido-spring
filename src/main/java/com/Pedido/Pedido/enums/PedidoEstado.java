@@ -4,8 +4,6 @@ package com.Pedido.Pedido.enums;
 public enum PedidoEstado {
     PENDIENTE,
     PAGADO,
-    ENVIADO,
-    ENTREGADO,
     CANCELADO
 
 }

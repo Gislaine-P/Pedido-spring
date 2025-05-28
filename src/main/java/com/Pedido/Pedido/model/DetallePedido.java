@@ -1,5 +1,7 @@
 package com.Pedido.Pedido.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,6 +30,9 @@ public class DetallePedido {
     private Long idProducto;
 
     @Column(nullable = false)
+    private String nombreProducto;
+
+    @Column(nullable = false)
     private double precioProducto;
 
     @Column(nullable = false)
@@ -41,7 +46,8 @@ public class DetallePedido {
      * joinColumn crea una columna llamada pedido_id en la tabla detallePedido referenciando al pedido que pertenece al detalle
      */
     @ManyToOne 
-    @JoinColumn(name = "pedido_id", nullable = false)
+    @JoinColumn(name = "pedido_id")
+    @JsonBackReference // Para evitar problemas de referencia cíclica al serializar a JSON
     private Pedido pedido;
 
 }

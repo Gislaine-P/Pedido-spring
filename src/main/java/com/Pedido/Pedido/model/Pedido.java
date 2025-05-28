@@ -1,8 +1,10 @@
 package com.Pedido.Pedido.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.Pedido.Pedido.enums.PedidoEstado;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -27,13 +29,13 @@ public class Pedido {
     
     @Id // Indica que este campo es la clave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera el valor automáticamente
-    private Long id;
+    private Long idPedido;
     
     @Column(nullable = false)
     private Long idUsuarioComprador;
 
     @Column(nullable = true)
-    private Long idsuarioVendedor;
+    private Long idUsuarioVendedor;
 
     /**Onetomany indica que un pedido puede tener muchos detalles de pedido
     * mappedBy indica que el detalle de pedido es la clase que tiene la referencia al pedido
@@ -41,13 +43,17 @@ public class Pedido {
     * orphanRemoval = true indica que si se elimina un detalle de la lista tambien se eliminara de la base de datos igual a sus detalles
     */ 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true) 
-    private List<DetallePedido> detalleProducto;
+    @JsonManagedReference // Para evitar problemas de referencia cíclica al serializar a JSON
+    private List<DetallePedido> detallePedido;
 
     @Enumerated(EnumType.STRING)
     private PedidoEstado estadoPedido;
 
     @Column(nullable = false)
     private double total;
+
+    @Column(nullable = false)
+    private LocalDate fechaPedido;
 
 
 
