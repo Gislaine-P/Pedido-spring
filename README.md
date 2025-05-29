@@ -11,3 +11,23 @@ Avances en el microservicio:
 
 Falta :
 Agregar metodos en Service y realizar los endpoints en Controller para probarse en Postman
+
+
+{
+  "idUsuarioComprador": 1003,
+  "idUsuarioVendedor": 2003,
+  "detallePedido": [
+    {
+      "idProducto": 3003,
+      "nombreProducto": "Producto A",
+      "precioProducto": 11.4,
+      "cantidadProducto": 2
+    }
+  ]
+}
+
+
+{
+  "idPedido": 1,
+  "estadoPedido": "PAGADO" (O "CANCELADO")
+}
