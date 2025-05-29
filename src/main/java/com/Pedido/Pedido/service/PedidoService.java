@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.Pedido.Pedido.enums.PedidoEstado;
 import com.Pedido.Pedido.model.DetallePedido;
@@ -16,6 +17,7 @@ import com.Pedido.Pedido.transferirDTO.DetallePedidoDTO;
 import com.Pedido.Pedido.transferirDTO.VentaDTO;
 
 @Service// Indica que esta clase es un servicio de Spring
+@Transactional
 public class PedidoService {
 
     @Autowired // Significa que Spring inyectará una instancia de PedidoRepository aquí

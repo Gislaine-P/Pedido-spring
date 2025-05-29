@@ -20,7 +20,7 @@ import com.Pedido.Pedido.service.PedidoService;
 import com.Pedido.Pedido.transferirDTO.VentaDTO;
 
 @RestController
-@RequestMapping("/api/v5/pedidos")
+@RequestMapping("/api/v6/pedidos")
 public class PedidoController {
 
     @Autowired
