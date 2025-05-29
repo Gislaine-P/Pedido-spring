@@ -2,6 +2,7 @@ package com.Pedido.Pedido.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,14 +20,11 @@ import com.Pedido.Pedido.service.PedidoService;
 import com.Pedido.Pedido.transferirDTO.VentaDTO;
 
 @RestController
-@RequestMapping("/api/v1/pedidos")
+@RequestMapping("/api/v5/pedidos")
 public class PedidoController {
 
+    @Autowired
     private PedidoService pedidoService;
-
-    public PedidoController(PedidoService pedidoService){
-        this.pedidoService = pedidoService;
-    }
 
 
     //ResponseEntity es una clase que representa una respuesta HTTP incluyendo el cuerp los encabezados y el estado de la respuesta
@@ -72,7 +70,7 @@ public class PedidoController {
 
 
         //OBTENER TODOS LOS PEDIDOS
-    @GetMapping("/pedidosGenerados")
+    @GetMapping
     public List<Pedido> obtenerTodosLosPedidos() {
         return pedidoService.obtenerTodosLosPedidos();
     }
